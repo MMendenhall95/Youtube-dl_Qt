@@ -5,7 +5,10 @@
 class Options
 {
 public:
-    Options();
+    Options(bool clean);
+    bool isClean();
+private:
+    bool clean;
 };
 
 #endif // OPTIONS_H
