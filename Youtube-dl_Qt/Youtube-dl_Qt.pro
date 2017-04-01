@@ -25,9 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    linkhandler.cpp
+    linkhandler.cpp \
+    options.cpp
 
 HEADERS  += mainwindow.h \
-    linkhandler.h
+    linkhandler.h \
+    options.h
 
 FORMS    += mainwindow.ui

@@ -40,14 +40,66 @@
      <string>Download!</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="linkBox">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
-      <width>421</width>
-      <height>181</height>
+      <x>300</x>
+      <y>440</y>
+      <width>111</width>
+      <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Store for later</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="linkBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cleanChk">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>270</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clean Name</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>290</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>smart download</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_3">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>320</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>unused_now</string>
     </property>
    </widget>
   </widget>
