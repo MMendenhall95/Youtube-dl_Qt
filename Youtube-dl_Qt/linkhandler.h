@@ -4,6 +4,10 @@
 #include <QObject>
 #include <QStringList>
 #include <QString>
+#include <QProcess>
+
+#include "options.h"
+
 
 class LinkHandler : public QObject
 {
@@ -11,12 +15,17 @@ class LinkHandler : public QObject
 public:
     explicit LinkHandler(QObject *parent = 0);
 
+    void download();
+    void download(Options *options, QString link);
     void listLinks(QString);
 signals:
 
 public slots:
 private:
     QStringList *links;
+    QProcess *process;
+    QObject *parent;
+
 };
 
 #endif // LINKHANDLER_H
