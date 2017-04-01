@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    linkInputs = new LinkHandler();
 }
 
 MainWindow::~MainWindow()
@@ -15,5 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_dwnBtn_clicked()
 {
-    //ui->linkBox
+    options = new Options(ui->cleanChk->checkState());
+    //linkInputs->listLinks(ui->linkBox->text());
+    linkInputs->download(options, ui->linkBox->text());
 }

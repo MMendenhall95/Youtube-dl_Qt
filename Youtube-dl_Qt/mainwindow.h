@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "linkhandler.h"
+#include "options.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,6 +23,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    LinkHandler *linkInputs;
+    Options *options;
+
 };
 
 #endif // MAINWINDOW_H
