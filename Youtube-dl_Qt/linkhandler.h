@@ -17,14 +17,17 @@ public:
 
     void download();
     void download(Options *options, QString link);
-    void listLinks(QString);
+    void listLinks(QString link);
+    int getCounter();
+    int setCounter();
 signals:
 
 public slots:
 private:
-    QStringList *links;
+    QStringList links;
     QProcess *process;
     QObject *parent;
+    int counter;
 
 };
 

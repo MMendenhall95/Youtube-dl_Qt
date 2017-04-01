@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     linkInputs = new LinkHandler();
+    ui->linkNum->setText(QString::number(linkInputs->getCounter()));
 }
 
 MainWindow::~MainWindow()
@@ -16,7 +17,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_dwnBtn_clicked()
 {
-    options = new Options(ui->cleanChk->checkState());
-    //linkInputs->listLinks(ui->linkBox->text());
-    linkInputs->download(options, ui->linkBox->text());
+    if(ui->linkNum->text().toInt() < 1){
+        options = new Options(ui->cleanChk->checkState());
+        linkInputs->download(options, ui->linkBox->text());
+    }else{
+
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    linkInputs->listLinks(ui->linkBox->text());
+    ui->linkNum->setText(QString::number(linkInputs->getCounter()));
 }
