@@ -128,6 +128,32 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLineEdit" name="directoryInput">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>380</y>
+      <width>321</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>~/Downloads</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>62</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Directory</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
