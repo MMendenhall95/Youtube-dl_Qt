@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     linkInputs = new LinkHandler();
+
     ui->linkNum->setText(QString::number(linkInputs->getCounter()));
 }
 
@@ -17,11 +19,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_dwnBtn_clicked()
 {
-    if(ui->linkNum->text().toInt() < 1){
-        options = new Options(ui->cleanChk->checkState());
-        linkInputs->download(options, ui->linkBox->text());
-    }else{
 
+    if(ui->linkNum->text().toInt() < 1){
+        Options *options = new Options(ui->cleanChk->checkState(), ui->directoryInput->text());
+        qDebug() << options->getDirectory();
+        linkInputs->download(options, ui->linkBox->text());
+        delete options;
+
+    }else{
+        //Options *options = new Options(ui->cleanChk->checkState());
+       // linkInputs->download();
+       // delete options;
     }
 }
 
