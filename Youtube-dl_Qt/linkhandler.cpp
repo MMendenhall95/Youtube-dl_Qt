@@ -1,6 +1,8 @@
 #include "linkhandler.h"
 
 #include <QStringList>
+#include <QDebug>
+
 LinkHandler::LinkHandler(QObject *parent) : QObject(parent)
 {
     process = new QProcess(parent);
@@ -16,7 +18,8 @@ void LinkHandler::download(Options *options, QString link){
 
 
     if(options->isClean()){
-        args << link << "-o" << "%(title)s.%(ext)s";
+        args << link << "-o" << options->getDirectory().append("/%(title)s.%(ext)s");
+        qDebug() << "DOWNLOADING!\n";
     }else{
         args << link;
     }
@@ -24,6 +27,7 @@ void LinkHandler::download(Options *options, QString link){
     process->start(QString("youtube-dl"), args);
 
 }
+
 void LinkHandler::download(){
 
 }
